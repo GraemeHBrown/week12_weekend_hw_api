@@ -15,7 +15,6 @@ ChartDataObject.prototype.createObject = function () {
     chartDataObject.title = {text: this.chartTitle};
     chartDataObject.series = [{name: this.seriesName, data:this.dataArray}];
     chartDataObject.xAxis = {categories: this.xAxisCategories};
-    console.log('Chart object in template: ', chartDataObject);
     return chartDataObject;
 }
 
