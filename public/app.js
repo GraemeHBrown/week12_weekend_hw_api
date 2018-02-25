@@ -4,7 +4,9 @@ const app = function () {
     //get data
     const dataProvider = new RequestDataProvider();
     const chartCreator = new ChartCreator();
+    const mapCreator = new MapCreator();
     const chartContainer = document.querySelector('#population-chart');
+    const mapContainer = document.querySelector('#population-map');
 
     //Region select
     const regionSelect = document.getElementById('region-select');
@@ -12,14 +14,13 @@ const app = function () {
     regionSelector.onChange = function (selected) {
         selectedRegion = selected;
         const aPIRequestURL = `https://restcountries.eu/rest/v2/region/${selectedRegion}`;
-        // makeRequest(aPIRequestURL, requestComplete);
         dataProvider.getData(aPIRequestURL);
     }
 
     //work with updated data
     dataProvider.onUpdate = function (countries) {
-        // createChartData(countries);
         chartCreator.createChart(selectedRegion, chartContainer, countries);
+        mapCreator.createMap(selectedRegion, mapContainer, countries);
     }
 
 }
