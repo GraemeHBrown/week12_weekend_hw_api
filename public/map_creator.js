@@ -22,7 +22,7 @@ MapCreator.prototype.createPopMap = function (dataObject) {
 MapCreator.prototype.createSeriesDataForMap = function (countriesData) {
     const dataArray = [];
     countriesData.forEach(function (country) {
-        const dataPointsArray = [country.alpha2Code.toLowerCase(), country.population];
+        const dataPointsArray = [country.alpha2Code.toLowerCase(), country.population, country.flag];
         dataArray.push(dataPointsArray);
     })
     console.log('Array in map creator:',dataArray);
