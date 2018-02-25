@@ -7,7 +7,7 @@ const app = function () {
     const mapCreator = new MapCreator();
     const chartContainer = document.querySelector('#population-chart');
     const mapContainer = document.querySelector('#population-map');
-
+    const listButton = document.getElementById('button-list-page');
     //Region select
     const regionSelect = document.getElementById('region-select');
     const regionSelector = new RegionSelector(regionSelect);
@@ -23,7 +23,13 @@ const app = function () {
         mapCreator.createMap(selectedRegion, mapContainer, countries);
     }
 
+    listButton.addEventListener('click', function () {
+        window.location.href = 'list_page.html';
+    });
+
 }
+
+
 
 
 document.addEventListener('DOMContentLoaded', app);

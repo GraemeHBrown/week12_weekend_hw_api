@@ -20,7 +20,7 @@ MapDataObject.prototype.createObject = function () {
     mapDataObject.tooltip = {
         useHTML: true,
         formatter: function () {
-            return `<img src=${this.point.flag} height="40px" width="40px"><div><span>Name: </span>${this.point.name}</div>
+            return `<img src=${this.point.flag} height="40px" width="60px"><div><span>Name: </span>${this.point.name}</div>
 <div><span>Population: </span>${this.point.value}</div>`
         }
     }
