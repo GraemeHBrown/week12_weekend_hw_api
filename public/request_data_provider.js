@@ -15,7 +15,6 @@ RequestDataProvider.prototype.getData = function (url) {
         var jsonString = request.responseText;
         var returnedCountries = JSON.parse(jsonString);
         this.countries = returnedCountries;
-        console.log('In data provider', this.countries);
         this.onUpdate(returnedCountries);
     }.bind(this));
 

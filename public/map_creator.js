@@ -25,6 +25,5 @@ MapCreator.prototype.createSeriesDataForMap = function (countriesData) {
         const dataPointsArray = [country.alpha2Code.toLowerCase(), country.population, country.flag];
         dataArray.push(dataPointsArray);
     })
-    console.log('Array in map creator:',dataArray);
     return dataArray;
 }
